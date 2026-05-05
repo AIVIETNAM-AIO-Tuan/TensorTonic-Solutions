@@ -30,9 +30,8 @@ def conv2d(x, W, b):
         for c in range(C_out):
             for i in range(H_out):
                 for j in range(W_out):
-                    total = np.sum(x[n,:,i:i+KH,j:j+KW] * w[c,:,:,:])
-                    total = float(total)    
-                    y[n,c,i,j] = float(total + b[c])
+                    total = np.sum(x[n,:,i:i+KH,j:j+KW] * w[c,:,:,:]) 
+                    y[n,c,i,j] = total + b[c]
     return y
     
                 
